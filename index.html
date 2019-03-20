@@ -7,17 +7,52 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
 <body>
-
-    <div class="container" onclick="myFunction(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
+    <nav class="navbar">
+        <span class="open-slide" onclick="openSlideMenu()">
+            <a href="#">
+                <svg width="30" height="30">
+                    <path d="M0,5 30,5" stroke="#000"
+                    stroke-width="5" />
+                    <path d="M0,14 30,14" stroke="#000"
+                    stroke-width="5" />
+                    <path d="M0,23 30,23" stroke="#000"
+                    stroke-width="5" />
+                </svg>
+            </a>
+        </span>
+        <!-- <div class="container" onclick="openSlideMenu()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div> -->
+        <ul class="navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="side-menu" class="side-nav">
+        <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
     </div>
+    <div id="main">
+        <h1>Responsive Side Menu</h1>
+    </div>
+
     
 </body>
 <script>
-    function myFunction(x) {
-  x.classList.toggle("change");
-}
+    function openSlideMenu() {
+        document.getElementById('side-menu').style.width = '250px';
+        document.getElementById('main').style.marginLeft = '250px';
+    }
+    function closeSlideMenu() {
+        document.getElementById('side-menu').style.width = '0';
+        document.getElementById('main').style.marginLeft = '0';
+    }
 </script>
 </html>
